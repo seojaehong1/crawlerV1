@@ -66,7 +66,7 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # 의존성 설치
-pip install playwright pandas
+pip install -r requirements.txt
 playwright install chromium
 ```
 
