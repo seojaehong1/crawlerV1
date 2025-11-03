@@ -57,4 +57,31 @@ page.goto(next_url)
 - 11페이지부터는 > 버튼 클릭해야 11~20 그룹 표시
 - 21페이지부터는 > 버튼 2번 클릭해야 21~30 그룹 표시
 
+## 실행 방법
+
+### 기본 설정
+```bash
+# 가상환경 생성 및 활성화
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# 의존성 설치
+pip install playwright pandas
+playwright install chromium
+```
+
+### 실행 옵션
+
+```bash
+python crawler.py \
+  --category-url "URL" \           # 필수: 크롤링할 카테고리 URL
+  --output "output.csv" \          # 선택: 출력 파일명 (기본: danawa_output.csv)
+  --pages 10 \                     # 선택: 크롤링할 페이지 수 (기본: 1)
+  --items-per-page 20 \            # 선택: 페이지당 제품 수 (기본: 0=전체)
+  --max-total-items 100 \          # 선택: 최대 제품 수 (기본: 0=무제한)
+  --delay-ms 800 \                 # 선택: 지연 시간 ms (기본: 600)
+  --headless \                     # 선택: 브라우저 숨김 모드
+  --long-format                    # 선택: 긴 형식 출력
+```
+
 
